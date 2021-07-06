@@ -1,0 +1,113 @@
+*{
+    box-sizing: border-box;
+    margin: 0;
+}
+body
+{
+    font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    color: #1868ae;
+    
+}
+
+.wrapper
+{
+    height: 800px;
+    background-color:#c6d7eb;
+        display: flex;/*vertically center*/
+    max-width: 1440px;
+    align-items: center;/*horizontally center*/
+    justify-content: center;
+    margin: 0 auto;/*center the whole wrapper*/
+}
+.restart
+{
+width: 200px;
+height: 50px;
+display: flex;
+background-color:#fccbd8;
+justify-content: center;
+align-items: center;
+border-radius: 50px;
+border: 2px solid;
+transition: all 0.2s ease;
+font-weight: bolder;
+margin-top: 30px;/*to push the text upwards*/
+}
+.restart:hover{
+    background:lightgrey ;
+    color: black;
+    cursor: pointer;
+}
+.header
+{
+    display: flex;
+    color: grey;
+    font-size: 24px;
+}
+
+.header .player-X{
+    flex: 1;
+    border-bottom: 5px solid hsl(355, 85%, 81%);
+    padding-bottom: 8px;
+}
+.player-X.active{
+    color:#1868ae;
+    border-color:#1868ae;
+}
+
+.header .player-O{
+    flex: 1;
+    border-bottom: 5px solid hsl(355, 85%, 81%);
+    padding-bottom: 8px;
+}
+.player-O.active{
+    color:#1868ae;
+    border-color:#1868ae;
+}
+.game
+{
+display: flex;
+flex-direction: column;
+width: 500px;
+height: 500px;
+}
+.board
+{
+
+display: grid;/*used to make grid*/
+grid-template-columns: repeat(3, 1fr);/*fr stands for fraction*/
+grid-template-rows: repeat(3, 1fr);
+flex-grow: 1;
+grid-gap: 0px;
+padding: 10px;
+}
+.board-tile{
+display:flex ;
+align-items: center;
+justify-content: center;
+font-size: 80px;
+background-color:linen;
+cursor: pointer;
+}
+.board-tile:not(:nth-child(3n))
+{
+border-right: 3px solid hsl(355, 85%, 81%);
+}
+.board-tile:not(:nth-last-child(-n+3))
+{
+border-bottom: 3px solid hsl(355, 85%, 81%);
+
+}
+.border-tile:hover{
+background: #eeee;
+}
+.tile-x{
+    color:#c6d7eb;
+}
+.tile-o{
+    color:lightslategrey;
+}
+.tile-winner span{
+color:lightsalmon ;
+
+}
